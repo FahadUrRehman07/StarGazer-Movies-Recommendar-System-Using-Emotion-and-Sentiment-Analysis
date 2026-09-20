@@ -58,7 +58,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-> **Reproducibility note:** The current `app.py` contains a machine-specific Windows dataset path. Convert it to a repository-relative path before presenting the application as production-ready.
+> **Reproducibility:** `app.py` now resolves `Complete_Dataset.csv` relative to the application file, so the project is portable across machines. Debug mode is disabled by default.
 
 ## 🔬 Research Direction
 
