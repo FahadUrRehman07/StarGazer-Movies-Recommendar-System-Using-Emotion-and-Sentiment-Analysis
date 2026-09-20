@@ -1,10 +1,22 @@
+from pathlib import Path
+
 from flask import Flask, request, render_template
 import pandas as pd
 
 app = Flask(__name__)
 
 # Load the dataset
-df = pd.read_csv('E:\\Semisterss\\FInal Year Project\\My FYP Project\\StarGazer FInal Version of Project\\My try\\Complete_Dataset.csv')
+# Load the dataset from the repository root so the app is portable across machines.
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR / "Complete_Dataset.csv"
+
+if not DATA_PATH.exists():
+    raise FileNotFoundError(
+        f"Dataset not found at {DATA_PATH}. "
+        "Place Complete_Dataset.csv in the project root."
+    )
+
+df = pd.read_csv(DATA_PATH)
 
 @app.route('/')
 def index():
