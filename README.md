@@ -6,7 +6,7 @@ An undergraduate movie recommendation project combining **genre-based filtering,
 
 StarGazer explores how user reviews and movie metadata can support recommendation beyond simple ratings.
 
-### Core ideas
+### Core ideas:
 - Movie metadata and descriptions
 - User-review analysis
 - Sentiment classification
